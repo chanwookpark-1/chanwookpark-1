@@ -1,9 +1,4 @@
-Python 3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]
-Type "copyright", "credits" or "license" for more information.
 
-IPython 9.15.0 -- An enhanced Interactive Python. Type '?' for help.
-
-%runfile C:/Users/user/.spyder-py3/temp.py --wdir
 ### Korean Population by Region
 * Total population: 51669716
 
