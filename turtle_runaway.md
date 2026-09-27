@@ -100,16 +100,16 @@ Chaser는 단순히 무작위로 이동하지 않고 Runner의 현재 위치를 
 먼저 Chaser와 Runner의 좌표를 가져온다.
 
 ```python
-my\\\_x, my\\\_y = self.pos()
+my_x, my_y = self.pos()
 
-target\\\_x, target\\\_y = opp\\\_pos
+target_x, target_y = opp_pos
 ```
 
 그리고 두 Turtle 사이의 x, y 방향 차이를 계산한다.
 
 ```python
-dx = target\\\_x - my\\\_x
-dy = target\\\_y - my\\\_y
+dx = target_x - my_x
+dy = target_y - my_y
 ```
 
 \---
@@ -119,7 +119,7 @@ dy = target\\\_y - my\\\_y
 Chaser가 Runner를 향하기 위해 `atan2()`를 사용한다.
 
 ```python
-target\\\_angle = math.degrees(
+target_angle = math.degrees(
     math.atan2(dy, dx)
 )
 ```
@@ -133,8 +133,8 @@ target\\\_angle = math.degrees(
 처음 작성한 코드에서는 다음과 같이 작성하였다.
 
 ```python
-target\\\_angle = turtle.Vec2D(dx, dy)
-angle = target\\\_angle.angle()
+target_angle = turtle.Vec2D(dx, dy)
+angle = target_angle.angle()
 ```
 
 하지만 `Vec2D` 객체에는 `angle()` 메서드가 존재하지 않기 때문에 다음과 같은 오류가 발생하였다.
@@ -152,8 +152,8 @@ AttributeError: 'Vec2D' object has no attribute 'angle'
 Chaser의 현재 방향과 Runner 방향의 차이를 계산한다.
 
 ```python
-angle\\\_diff = (
-    target\\\_angle    - current\\\_heading
+angle_diff = (
+    target_angle    - current_heading
     + 180
 ) % 360 - 180
 ```
@@ -161,16 +161,16 @@ angle\\\_diff = (
 이 계산을 통해 Chaser가 Runner를 향하기 위해 어느 방향으로 회전해야 하는지 결정한다.
 
 ```python
-if angle\\\_diff > 0:
-    self.left(turn\\\_amount)
+if angle_diff > 0:
+    self.left(turn_amount)
 else:
-    self.right(turn\\\_amount)
+    self.right(turn_amount)
 ```
 
 따라서 Chaser는 Runner가 있는 방향으로 회전한 후 앞으로 이동한다.
 
 ```python
-self.forward(self.step\\\_move)
+self.forward(self.step_move)
 ```
 
 전체적인 동작은 다음과 같다.
@@ -184,7 +184,7 @@ self.forward(self.step\\\_move)
 게임의 제한시간은 30초로 설정하였다.
 
 ```python
-self.time\\\_left = 30
+self.time_left = 30
 ```
 
 게임이 시작되면 `countdown()` 함수가 1초마다 실행된다.
@@ -201,7 +201,7 @@ self.canvas.ontimer(
 매 1초마다 다음 코드가 실행된다.
 
 ```python
-self.time\\\_left -= 1
+self.time_left -= 1
 ```
 
 따라서 시간은 다음과 같이 감소한다.
@@ -221,19 +221,19 @@ self.time\\\_left -= 1
 두 Turtle 사이의 거리를 계산하여 일정 거리보다 가까워지면 잡힌 것으로 판단한다.
 
 ```python
-return dx \\\*\\\* 2 + dy \\\*\\\* 2 < self.catch\\\_radius2
+return dx ** 2 + dy ** 2 < self.catch_radius2
 ```
 
 잡히면 Chaser에게 100점을 추가한다.
 
 ```python
-self.chaser\\\_score += 100
+self.chaser_score += 100
 ```
 
 그리고 게임을 종료한다.
 
 ```python
-self.game\\\_over = True
+self.game_over = True
 ```
 
 화면에는 다음과 같은 메시지가 출력된다.
@@ -251,7 +251,7 @@ Chaser Score: 100
 30초가 모두 지나면 Runner가 성공적으로 도망간 것으로 처리한다.
 
 ```python
-self.runner\\\_score += 100
+self.runner_score += 100
 ```
 
 그리고 게임을 종료한다.
@@ -367,7 +367,7 @@ Runner가 잡히거나 제한시간이 종료되면 게임을 종료하도록 �
 
 실제 프로그램을 실행한 결과는 다음과 같다.
 
-!\[Turtle Runaway Game 수행 결과](turtle\_runaway.png)
+![Turtle Runaway Game 수행 결과](turtle_runaway.png)
 
 위 실행 결과에서는 다음과 같은 상황을 확인할 수 있다.
 
