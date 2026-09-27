@@ -368,7 +368,7 @@ Runner가 잡히거나 제한시간이 종료되면 게임을 종료하도록 �
 
 실제 프로그램을 실행한 결과는 다음과 같다.
 
-!\[Turtle Runaway Game 수행 결과](turtlerunaway.png)
+!\[Turtle Runaway Game 수행 결과](turtle_runaway.png)
 
 위 실행 결과에서는 다음과 같은 상황을 확인할 수 있다.
 
